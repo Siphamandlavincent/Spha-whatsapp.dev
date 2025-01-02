@@ -1,0 +1,1 @@
+<Label text="{{ time }}" class="text-white text-sm ml-2" />

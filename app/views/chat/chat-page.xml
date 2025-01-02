@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ conversation.name }}" class="action-bar">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+        <ActionItem ios.position="right" android.position="actionBar">
+            <GridLayout columns="auto,auto" class="p-2">
+                <Label text="📷" col="0" class="text-xl mr-4" tap="{{ onCameraPress }}" />
+                <Label text="📎" col="1" class="text-xl" tap="{{ onAttachPress }}" />
+            </GridLayout>
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="*, auto">
+        <ListView items="{{ messages }}" row="0" class="chat-list">
+            <ListView.itemTemplate>
+                <GridLayout>
+                    <StackLayout class="{{ senderId === currentUser.id ? 'message-bubble message-bubble-sent' : 'message-bubble message-bubble-received' }}">
+                        <Image src="{{ content }}" class="rounded-lg" visibility="{{ type === 'image' ? 'visible' : 'collapsed' }}" />
+                        <Label text="{{ content }}" textWrap="true" visibility="{{ type === 'text' ? 'visible' : 'collapsed' }}" />
+                        <Label text="{{ timestamp | timeAgo }}" class="text-xs opacity-70" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <GridLayout rows="auto" columns="*, auto" row="1" class="p-2 bg-white border-t border-gray-200">
+            <TextField hint="Type a message..." text="{{ messageText }}" returnKeyType="send" col="0" class="input p-2" />
+            <Button text="Send" tap="{{ onSendMessage }}" col="1" class="btn btn-primary ml-2" />
+        </GridLayout>
+    </GridLayout>
+</Page>

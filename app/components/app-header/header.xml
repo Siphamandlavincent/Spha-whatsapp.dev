@@ -1,0 +1,8 @@
+<GridLayout columns="auto, auto, *" class="action-bar p-2">
+    <Label text="Spha-WhatsApp" class="text-white text-lg font-bold" col="0" />
+    <clock col="1" />
+    <GridLayout columns="auto,auto" col="2" horizontalAlignment="right">
+        <Label text="🔍" col="0" class="text-white text-lg mr-4" tap="{{ onSearch }}" />
+        <Label text="⋮" col="1" class="text-white text-lg" tap="{{ onMenu }}" />
+    </GridLayout>
+</GridLayout>

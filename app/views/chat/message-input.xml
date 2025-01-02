@@ -1,0 +1,6 @@
+<GridLayout rows="auto" columns="auto, *, auto, auto" class="p-2 bg-white">
+    <Label text="😊" class="text-xl" col="0" tap="{{ onEmojiTap }}" />
+    <TextField hint="Message" text="{{ messageText }}" returnKeyType="send" col="1" class="chat-input mx-2 px-4 py-2" />
+    <Label text="🎤" class="text-xl mx-2" col="2" tap="{{ onVoiceMessageTap }}" />
+    <Label text="{{ messageText ? '➤' : '📷' }}" class="text-xl" col="3" tap="{{ messageText ? onSendMessage : onCameraPress }}" />
+</GridLayout>

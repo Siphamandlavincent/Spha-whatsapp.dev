@@ -1,0 +1,9 @@
+<GridLayout columns="auto, *, auto, auto" class="p-2">
+    <Image src="{{ avatar }}" width="40" height="40" class="rounded-full" col="0" />
+    <StackLayout col="1" class="ml-2">
+        <Label text="{{ name }}" class="font-semibold" />
+        <status-indicator isOnline="{{ isOnline }}" lastSeen="{{ lastSeen }}" />
+    </StackLayout>
+    <Label text="📞" class="text-xl mx-2" col="2" tap="{{ onCallTap }}" />
+    <Label text="📹" class="text-xl" col="3" tap="{{ onVideoCallTap }}" />
+</GridLayout>

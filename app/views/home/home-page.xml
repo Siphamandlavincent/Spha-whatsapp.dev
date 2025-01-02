@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar>
+        <NavigationButton visibility="collapsed" />
+        <ActionItem>
+            <app-header />
+        </ActionItem>
+    </ActionBar>
+    
+    <TabView selectedTabTextColor="#FFFFFF" tabTextFontSize="16" androidTabsPosition="top">
+        <TabViewItem title="CHATS">
+            <StackLayout>
+                <ListView items="{{ conversations }}" itemTap="{{ onConversationTap }}" class="conversation-list">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *, auto" rows="auto, auto" class="p-2 border-b border-gray-200">
+                            <Image src="{{ avatar }}" width="50" height="50" class="rounded-full" row="0" col="0" rowSpan="2" />
+                            <GridLayout columns="*, auto" row="0" col="1">
+                                <Label text="{{ name }}" class="text-lg font-semibold ml-2" col="0" />
+                                <Label text="{{ lastMessageTime }}" class="text-xs text-gray-500" col="1" />
+                            </GridLayout>
+                            <Label text="{{ lastMessage }}" class="text-gray-500 ml-2" row="1" col="1" />
+                            <Label text="{{ unreadCount }}" class="unread-badge" 
+                                   row="0" col="2" visibility="{{ unreadCount > 0 ? 'visible' : 'collapsed' }}" />
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </TabViewItem>
+        <!-- Status and Calls tabs remain the same -->
+    </TabView>
+</Page>

@@ -1,0 +1,4 @@
+<GridLayout columns="auto, *" class="p-1">
+    <Label text="●" class="status-online text-xs" col="0" visibility="{{ isOnline ? 'visible' : 'collapsed' }}" />
+    <Label text="{{ lastSeen }}" class="text-xs text-gray-500 ml-1" col="1" visibility="{{ !isOnline ? 'visible' : 'collapsed' }}" />
+</GridLayout>

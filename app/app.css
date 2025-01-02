@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Colors */
+.action-bar {
+    background-color: #90cf3e;
+    color: #ffffff;
+}
+
+Page {
+    background-color: #f0f2f5;
+}
+
+.tab-view {
+    background-color: #90cf3e;
+    color: #ffffff;
+}
+
+.tab-view-item {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.tab-view-item.active {
+    color: #ffffff;
+}
+
+.tab-indicator {
+    background-color: #ffffff;
+    height: 2;
+}
+
+.message-bubble {
+    border-radius: 16;
+    padding: 12;
+    margin: 4 8;
+    max-width: 80%;
+}
+
+.message-bubble-sent {
+    background-color: #e7fad1;
+    color: #0a0a09;
+    margin-left: auto;
+}
+
+.message-bubble-received {
+    background-color: #ffffff;
+    color: #0a0a09;
+}
+
+.status-online {
+    color: #90cf3e;
+}
+
+.chat-input {
+    background-color: #ffffff;
+    border-radius: 20;
+    border-width: 1;
+    border-color: #e2e8f0;
+}
+
+.conversation-list {
+    background-color: #ffffff;
+}
+
+.unread-badge {
+    background-color: #90cf3e;
+    color: #ffffff;
+    border-radius: 999;
+    padding: 2 6;
+    font-size: 12;
+}
+
+.header-text {
+    color: #0a0a09;
+    font-weight: bold;
+}
+
+.message-time {
+    color: #667781;
+    font-size: 12;
+}
+
+.chat-actions {
+    color: #90cf3e;
+}
